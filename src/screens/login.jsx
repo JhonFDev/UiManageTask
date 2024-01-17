@@ -11,7 +11,7 @@ export default function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
-      const {data} = await axios.post("http://localhost:3000/login", {
+      const {data} = await axios.post("http://localhost:5000/login", {
         ...values,
       })
     } catch (error) {
@@ -23,8 +23,8 @@ export default function Login() {
       <h2>Inicio de Sesión</h2>
       <form onSubmit={(e) => handleSubmit(e)}>
         <div>
-          <label htmlFor="email">Correo</label>
-          <input type="email" name="email" placeholder="Ingresar Correo" onChange={(e)=>setValues({...values,[e.target.name]:e.target.value})}/>
+          <label htmlFor="user">Usuario</label>
+          <input type="user" name="user" placeholder="Ingresar Usuario" onChange={(e)=>setValues({...values,[e.target.name]:e.target.value})}/>
         </div>
         <div>
           <label htmlFor="password">Contraseña</label>
